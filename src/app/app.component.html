@@ -1,0 +1,208 @@
+<div class="header">
+  <div class="list">
+    <div *ngFor="let items of navArrays" class="nav_item"  [ngClass]="selectedNav == items.id ? 'active':''" (click)="scroll(items.divId,items.id)">{{items.name}}</div>
+  </div>
+  <div class="list nav_bar_toggle">
+    <div  [ngClass]="toggelNav ? 'active':''" (click)="toggelNavbar()" >
+    <span></span>    <span></span>    <span></span>        
+  </div>
+  </div>
+</div>
+<div class="nav_bar_content"  [ngClass]="toggelNav ? 'collapsed':''">
+  <div *ngFor="let items of navArrays" class="nav_items"  [ngClass]="selectedNav == items.id ? 'active':''" (click)="scrolltoMobile(items.divId,items.id)">{{items.name}}</div>
+</div>
+<div class="intro">
+  <div class="container_main lander">
+  <div class="short_intro"><span>{{intro}}<span class="typewriter_cursor">|</span></span></div>
+  <div class="sub_topic">Interactive Resume</div>
+  </div>
+</div>
+
+<div class="profile">
+  <div id="profile" #profile class="container" >
+    <h2 class="headings">Profile</h2>
+    <div class="quote">"You are very powerful, provided you know how powerful you are." <br>- Yogi Bhajan</div>
+    <div class="d-flex profile_wrapper">
+      <div><h3>About Me</h3>  <p> I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one</p></div>
+      <div class="txt_align"><img src="https://picsum.photos/200" alt="Profile photo"></div>
+      <div><h3>Details</h3>  <p> <strong>Name:</strong><br>Kiran Kumar M <br><strong>D.O.B:</strong> <br>08.09.1997 <br><strong>Phone:</strong><br> +91-8667095979<br><strong>Location:</strong><br> No.17C, Seethapathy 1st Street, Madhavaram, Chennai-600060,India. </p></div>
+    </div>
+  </div>
+</div>
+
+<div id="experiences" #experiences class="container" >
+  <h2 class="headings">Experiences</h2>
+  <div class="quote">"The only source of knowledge is experience.” <br>- Albert Einstein</div>
+  <h3>Education</h3>
+  <div class="experiences_wrapper education">
+    <div class="row d-flex">
+      <div class="heading"><h4>St.Joseph College of Engineering </h4> <p class="duration">May 2014 - May 2018</p></div>
+      <div class="details"> <div class="edu_heading">Bachelor of Engineering - Electronics & Communication Engineering</div> <div> gfdgdfg</div> </div>
+    </div>
+    <div class="row d-flex">
+      <div class="heading"><h4>St.Ann's Matriculation Higher Secondary School</h4> <p class="duration">May 2013 - Mar 2014</p></div>
+      <div class="details"> <div class="edu_heading">Higher Secondary (HSC - 12th)</div> <div>The education was majorly Computer science based where i learned basics computer programming, coding.   </div> </div>
+    </div>
+    <div class="row d-flex">
+      <div class="heading"><h4>St.Ann's Matriculation Higher Secondary School</h4> <p class="duration">May 2011 - Mar 2012</p></div>
+      <div class="details"> <div class="edu_heading">Matriculation (SSLC - 10th)</div> <div>I enjoyed doing science, math, biology. I got my fundamental concepts clear which helped me improve my basics. </div> </div>
+    </div>
+  </div>
+  <h3>Carrers</h3>
+  <div class="experiences_wrapper careers">
+    <div class="row d-flex">
+      <div class="heading"><h4>Accenture </h4> <p class="duration">Jan 2019 - Current</p></div>
+      <div class="details"> <div class="edu_heading">Fulltime - Application Development Senior Analyst</div> <div> gfdgdfg</div> </div>
+    </div>
+  </div>
+</div>
+
+<div class="abilities">
+  <div id="abilities" #abilities class="container" >
+    <h2 class="headings">Abilities</h2>
+    <div class="quote">"It is possible to fly without motors, but not without knowledge and skill." <br>- Wilbur Wright</div>
+    <h3>Skills</h3>
+    <div class="abilities_wrapper careers">
+      <div class="row d-flex">
+        <div class="skill_list">
+          <div class="d-flex"> 
+          <div class="skill_name">Angular</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+       </div>
+       <div class="d-flex"> 
+        <div class="skill_name">Typescript</div> 
+        <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+        </div>
+       <div class="d-flex"> 
+        <div class="skill_name">HTML(5)</div> 
+        <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+        </div>
+        <div class="d-flex"> 
+          <div class="skill_name">CSS(3)</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+        </div>
+        <div class="d-flex"> 
+          <div class="skill_name">JSON</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+      </div>
+        <div class="d-flex"> 
+          <div class="skill_name">Javascript</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
+        </div>
+        <div class="d-flex"> 
+          <div class="skill_name">Command line Inteface</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
+       </div>
+      </div>
+        <div class="skill_list">
+          <div class="d-flex"> 
+            <div class="skill_name">JQuery</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+         </div>
+         <div class="d-flex"> 
+          <div class="skill_name">Bootstrap Framework</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+       </div>
+          <div class="d-flex"> 
+            <div class="skill_name">ASP.NET</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+        </div>
+        <div class="d-flex"> 
+          <div class="skill_name">Adobe Photoshop</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+          </div>
+         <div class="d-flex"> 
+          <div class="skill_name">RPA (AA)</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+          </div>
+          <div class="d-flex"> 
+            <div class="skill_name">Node.js</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+        </div>
+          <div class="d-flex"> 
+            <div class="skill_name">React</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Languages</h3>
+    <div class="abilities_wrapper languages">
+      <div class="row d-flex">
+        <div class="skill_list">
+          <div class="d-flex"> 
+            <div class="skill_name">Hindi (Mother tongue)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+          </div>
+         <div class="d-flex"> 
+          <div class="skill_name">English (Daily use)</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+       </div>
+       </div>
+        <div class="skill_list">
+          <div class="d-flex"> 
+            <div class="skill_name">Haryanvi (Daily use)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+         </div>
+         <div class="d-flex"> 
+          <div class="skill_name">Tamil</div> 
+          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star "></span><span class="glyphicon glyphicon-star "></span><span class="glyphicon glyphicon-star "></span></div>
+       </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Tools</h3>
+    <div class="abilities_wrapper tools">
+      <div class="row d-flex">
+        <div class="skill_list">
+          <div class="d-flex"> 
+            <div class="skill_name">MS Office (10+ years)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+          </div>
+          <div class="d-flex"> 
+            <div class="skill_name">Windows (10+ years)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+          </div>
+          <div class="d-flex"> 
+            <div class="skill_name">Notepad++ (4 years)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+          </div>
+
+        </div>
+        <div class="skill_list">
+          <div class="d-flex"> 
+            <div class="skill_name">Google Chrome (6 years)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
+          </div>
+          <div class="d-flex"> 
+            <div class="skill_name">Visual Studio Code (4 years)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
+          </div>
+          <div class="d-flex"> 
+            <div class="skill_name">Micosoft Visual Studio (4 years)</div> 
+            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="contact">
+  <div id="contact" #contact class="container" >
+    <h2 class="headings">Contact</h2>
+    <div class="quote">"The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed." <br>- Carl Jung</div>
+    <div class="contact_wrapper">
+      <div class="row d-flex">
+        <div class="list"> fdsf</div>
+        <div class="list"> dfds</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

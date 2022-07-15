@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+}
+:root {
+    --background-color:#f2f4ff;   
+    --color1:#a2a8d3;   
+    --color2:#38598b;   
+    --color3:#113f67;   
+    --color-white:#fff;
+    --color-filled:#6471cd;
+    --color-empty:#dadada;
+    --onhover-color:#f2f8fd;
+    --font-color:#ececec;
+    --nav-highlight-color:#012a68;
+    --nav-color:#464a69d9;
+
+}
+body{
+    background-color: var(--background-color);
+    font-size: 14px;
+    margin:0;
+    line-height: 1.64;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding, 50px);
+  }
+html,body{  
+    font-family: 'Open Sans', sans-serif !important;
+    height: 100%;
+    color:#3d3c3c;
+}
+h2,h3{
+    font-weight: 300;
+    color: var(--color2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+h2{
+    font-size: 54px;
+    text-align: center;
+}
+h3{
+    font-size: 28px;
+}
+h4{
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 17px;
+}
+.d-flex{
+    display: flex;
+}
+strong{
+    font-weight: 900;
+    font-size: 15px;
+}
+.skill_name{
+    width:100%;
+}
+.skill_rating .glyphicon {
+    color: var(--color-empty);
+}
+.skill_rating .glyphicon.filled {
+    color:var(--color-filled);
+}
+#contact .headings{
+    color: var( --color-white)
+}
+#contact .quote{
+    color: var(--font-color)
+}
