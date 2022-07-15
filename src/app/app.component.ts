@@ -84,4 +84,5 @@ export class AppComponent implements OnInit {
   toggelNavbar(){
     this.toggelNav=!this.toggelNav;
   }
+  testfunction(){}
 }
