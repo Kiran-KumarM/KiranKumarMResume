@@ -13,15 +13,16 @@ export class AppComponent implements OnInit {
   navArrays:InavItrms=[{id:0,divId:'profile',name:'PROFILE'},{id:1,divId:'experiences',name:'EXPERIENCES'},{id:2,divId:'abilities',name:'ABILITIES'},{id:3,divId:'contact',name:'CONTACT'}]
   intro:string='';
   toggelNav:boolean=false;
+  ageInyears!:number;
   constructor(){
 
   }
   ngOnInit(): void {
     this.applyIntoHeight();
-   
+    this.calculateAge();
     const navigationHeight = document.querySelector<HTMLElement>('.header')!.offsetHeight;
     document.documentElement.style.setProperty('--scroll-padding', navigationHeight - 1 + "px");
-
+    window.scrollTo(0, 0);
     
   }
   applyIntoHeight(){
@@ -52,14 +53,19 @@ export class AppComponent implements OnInit {
       if(windowScrolloffsetWithHeader < (sectionOffsetTop[0]-buffer)){
         this.selectedNav=null;
       }
-      // console.log( windowScrolloffset+85)
-      // console.log(sectionOffsetTop)
-      // var myElement = document.getElementById('profile');
-      // console.dir(myElement?.offsetTop)
-      // var myElement1 = document.getElementById('experiences');
-      // console.dir(myElement1?.offsetTop)
-     //console.log('Scrolling...');
+
   });
+  }
+  calculateAge(){
+    var dob = new Date("09/08/1997");  
+    //calculate month difference from current date in time  
+    var month_diff = Date.now() - dob.getTime();     
+    //convert the calculated difference in date format  
+    var age_dt = new Date(month_diff);       
+    //extract year from date      
+    var year = age_dt.getUTCFullYear();  
+    //now calculate the age of the user  
+    this.ageInyears= Math.abs(year - 1970);  
   }
   startTypingAnimation(){
     let message='Hi, I am Kiran,\na Web Developer';
@@ -74,8 +80,12 @@ export class AppComponent implements OnInit {
     },60)
   }
   scrolltoMobile(el: string,id:number){
+    document.querySelector<HTMLElement>('.nav_bar_content')!.style.transitionDuration='0s'
     this.toggelNav=false;
     this.scroll(el,id);
+    setTimeout(() => {
+      document.querySelector<HTMLElement>('.nav_bar_content')!.style.transitionDuration='.2s'
+    }, 20);
   }
   scroll(el: string,id:number) {
     this.selectedNav=id;
@@ -84,5 +94,5 @@ export class AppComponent implements OnInit {
   toggelNavbar(){
     this.toggelNav=!this.toggelNav;
   }
-  testfunction(){}
+
 }
