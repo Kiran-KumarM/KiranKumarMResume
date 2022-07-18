@@ -217,6 +217,20 @@ font-size: 28px;
     flex:2;
     padding: 0 15px 0 15px;
 }
+.experiences_wrapper .location{
+    display: block;
+    margin-top: 5px;
+    font-size: 15px;
+}
+.seperator{
+    margin: 3px;
+}
+.seperator , .location a ,.location{
+    color:var(--color2);
+}
+.glyphicon:not(.glyphicon-star)  {
+    margin-right: 2px;
+}
 .txt_align{
     text-align: center;
 }

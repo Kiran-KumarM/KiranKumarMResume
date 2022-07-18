@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.calculateAge();
     const navigationHeight = document.querySelector<HTMLElement>('.header')!.offsetHeight;
     document.documentElement.style.setProperty('--scroll-padding', navigationHeight - 1 + "px");
-    window.scrollTo(0, 0);
+   // window.scrollTo(0, 0);
     
   }
   applyIntoHeight(){
