@@ -14,7 +14,7 @@
 }
 .list{
     display: flex;
-    padding: 34px 16px;
+    padding: 29px 16px;
     gap: 25px;
     justify-content: flex-end;
     max-width: 1280px;
@@ -238,6 +238,12 @@ font-size: 28px;
     margin-top: 10px;
     font-weight: 700;
     padding-bottom: 12px;
+}
+.edu_heading span{
+    float:right;
+}
+.career_desc{
+    white-space: pre-line;
 }
 .skill_list >div{
     padding:3px 0 3px 0;

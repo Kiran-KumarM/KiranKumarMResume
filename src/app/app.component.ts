@@ -1,4 +1,5 @@
 import { Component,OnInit,AfterViewInit} from '@angular/core';
+import { SharedService,ResumeDetails } from './shared/shared.service'
 declare let $: any;
 type InavItrms = Array<{id: number, divId: string ,name:string}>;
 
@@ -9,17 +10,21 @@ type InavItrms = Array<{id: number, divId: string ,name:string}>;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  resumeDetails!:ResumeDetails;
   selectedNav!:number | null;
   navArrays:InavItrms=[{id:0,divId:'profile',name:'PROFILE'},{id:1,divId:'experiences',name:'EXPERIENCES'},{id:2,divId:'abilities',name:'ABILITIES'},{id:3,divId:'contact',name:'CONTACT'}]
   intro:string='';
   toggelNav:boolean=false;
   ageInyears!:number;
-  constructor(){
+ 
+  constructor(private appservice:SharedService){
 
   }
   ngOnInit(): void {
+    this.resumeDetails=this.appservice.getResumeData();
+    this.resumeDetails.profile.details.age=this.calculateAge(this.resumeDetails.profile.details.age)
+    console.log(this.resumeDetails)
     this.applyIntoHeight();
-    this.calculateAge();
     const navigationHeight = document.querySelector<HTMLElement>('.header')!.offsetHeight;
     document.documentElement.style.setProperty('--scroll-padding', navigationHeight - 1 + "px");
    // window.scrollTo(0, 0);
@@ -56,16 +61,13 @@ export class AppComponent implements OnInit {
 
   });
   }
-  calculateAge(){
-    var dob = new Date("09/08/1997");  
-    //calculate month difference from current date in time  
-    var month_diff = Date.now() - dob.getTime();     
-    //convert the calculated difference in date format  
-    var age_dt = new Date(month_diff);       
-    //extract year from date      
-    var year = age_dt.getUTCFullYear();  
-    //now calculate the age of the user  
-    this.ageInyears= Math.abs(year - 1970);  
+  calculateAge(myDOB:string) :string{
+    var dob = new Date(myDOB);  
+    //calculate day difference from current date in millisecond  
+    let day_diff =(new Date().getTime())- dob.getTime();   
+    day_diff /= (1000*60*60*24) //to day from ms  
+    //convert the calculated difference in years format  
+    return (day_diff/365).toFixed(1);
   }
   startTypingAnimation(){
     let message='Hi, I am Kiran,\na Web Developer';

@@ -20,74 +20,39 @@
 
 <div class="profile">
   <div id="profile" #profile class="container" >
-    <h2 class="headings">Profile</h2>
-    <div class="quote">"You are very powerful, provided you know how powerful you are." <br>- Yogi Bhajan</div>
+    <h2 class="headings">{{resumeDetails.profile.heading}}</h2>
+    <div class="quote">{{resumeDetails.profile.quote}} <br>- {{resumeDetails.profile.quoteSayer}}</div>
     <div class="d-flex profile_wrapper">
-      <div><h3>About Me</h3>  <p> I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one.</p></div>
+      <div><h3>About Me</h3>  <p>{{resumeDetails.profile.aboutMe}}</p></div>
       <div class="txt_align"><img src="https://picsum.photos/200" alt="Profile photo"></div>
-      <div><h3>Details</h3>  <p> <strong>Name:</strong><br>Kiran Kumar M <br><strong>Age:</strong> <br>{{ageInyears}} years <br><strong>Phone:</strong><br> +91-8667095979<br><strong>Location:</strong><br> No.17C, Seethapathy 1st Street, Madhavaram, Chennai-600060,India. </p></div>
+      <div><h3>Details</h3>  <p> <strong>Name:</strong><br>{{resumeDetails.profile.details.name}}<br><strong>Age:</strong> <br>{{resumeDetails.profile.details.age}} years <br><strong>Phone:</strong><br> +91-8667095979<br><strong>Location:</strong><br>{{resumeDetails.profile.details.address}} </p></div>
     </div>
   </div>
 </div>
 
 <div id="experiences" #experiences class="container" >
-  <h2 class="headings">Experiences</h2>
-  <div class="quote">"The only source of knowledge is experience.” <br>- Albert Einstein</div>
+  <h2 class="headings">{{resumeDetails.experiences.heading}}</h2>
+  <div class="quote">{{resumeDetails.experiences.quote}} <br>- {{resumeDetails.experiences.quoteSayer}}</div>
   <h3>Education</h3>
   <div class="experiences_wrapper education">
-    <div class="row d-flex">
-      <div class="heading"><h4>St.Joseph College of Engineering </h4> <p class="duration">May 2014 - May 2018</p></div>
-      <div class="details"> <div class="edu_heading">Bachelor of Engineering - Electronics & Communication Engineering <span><i> [ 7.9 CGPA ]</i></span></div>
-       <div> This course provided with an overview of electronic devices, circuits, communication equipments like transmitter, receiver, integrated circuits (IC). It also provided me with basic electronics, analog and digital transmission & reception of data, voice and video (Example AM, FM, DTH), microprocessors, satellite communication, microwave engineering, antennae and wave progression. An introduction to using computer applications to solve engineering problems. Learning the rudiments of MATLAB and Excel in order to design and/or visualize systems. 
-        <span class="location"> <span class="glyphicon glyphicon-map-marker"></span>Chennai</span>
+    <div class="row d-flex" *ngFor="let data of resumeDetails.experiences.education">
+      <div class="heading"><h4>{{data.instituteName}}</h4> <p class="duration">{{data.duration}}</p></div>
+      <div class="details"> <div class="edu_heading">{{data.courseName}}<span><i> [ {{data.courseResult}} ]</i></span></div>
+       <div> {{data.description}} 
+        <span class="location"> <span class="glyphicon glyphicon-map-marker"></span>{{data.location}}</span>
        </div> 
       </div>
-    </div>
-    <div class="row d-flex">
-      <div class="heading"><h4>St.Ann's Matriculation Higher Secondary School</h4> <p class="duration">May 2013 - Mar 2014</p></div>
-      <div class="details"> <div class="edu_heading">Higher Secondary (HSC - 12th) <span><i> [ 81.91% ]</i></span></div> <div>The education was majorly Computer science based where i learned basics computer programming, coding.<span class="location"> <span class="glyphicon glyphicon-map-marker"></span>Chennai</span>
-      </div> </div>
-    </div>
-    <div class="row d-flex">
-      <div class="heading"><h4>St.Ann's Matriculation Higher Secondary School</h4> <p class="duration">May 2011 - Mar 2012</p></div>
-      <div class="details"> <div class="edu_heading">Matriculation (SSLC - 10th) <span><i> [ 84.00% ]</i></span></div> <div>I enjoyed doing science, math, biology. I got my fundamental concepts clear which helped me improve my basics.        <span class="location"> <span class="glyphicon glyphicon-map-marker"></span>Chennai</span>
-      </div> </div>
     </div>
   </div>
   <h3>Carrers</h3>
   <div class="experiences_wrapper careers">
-    <div class="row d-flex">
-      <div class="heading"><h4>Accenture </h4> <p class="duration">Jan 2019 - Current</p></div>
-      <div class="details"> <div class="edu_heading">Fulltime - Application Development Senior Analyst</div> <div> 
-          Architected & Developed User Interface(UI) Rich Web Applications,
-          and Web Service Applications using HTML,CSS in Angular
-          Framework.
-          <br> Developed and designed UI for myDiagnostic, Living System
-          platforms which is a one place, one platform approach for assessing
-          an organization’s business, talent and- IT maturity.
-          <br> Architected and developed Angular applications for the backend
-          development and front-end application using JavaScript, jQuery,
-          d3.js and PostgreSQL for database.
-          <br> Mentored more than 6 team members, enabling them to achieve
-          professional growth and personal goals.
-          <br> Involved in Training & Mentoring other programmers.
-          <br> Involved in software coding, testing and debugging.
-          <br> Participated in project planning, scheduling and execution of
-          roadmap development.
-          <br> Responsible for supporting the project manager and other project
-          resources during the course of the project lifecycle.
-          <br> Design and develop high-performance and scalable web application
-          to interact with RESTful APIs.
-          <br> Architected and developed Python and Django for the backend
-          development and front-end application using Bootstrap, JavaScript,
-          chart.js, AJAX, CSS and Mongo dB for database.
-          <br> Develop robots using Automation Anywhere (for Oracle / SAP) and
-          identifying and debugging the errors using Error Handlers.
-          <br> Hand on experience in Robotic Process Automation RPA with
-          different platforms and successful implementation in Production
-          environment.
-          <span class="location"> <span class="glyphicon glyphicon-map-marker"></span>Chennai<span class="seperator">|</span> <span class="glyphicon glyphicon-link"></span> <a href="https://www.accenture.com/in-en" target="_blank">Accenture</a> </span>
-
+    <div class="row d-flex" *ngFor="let items of resumeDetails.experiences.carrers">
+      <div class="heading"><h4>{{items.companyName}} </h4> <p class="duration">{{items.duration}}</p></div>
+      <div class="details"> <div class="edu_heading">{{items.position}}</div> <div class="career_desc"> 
+          {{items.description}}
+          <span class="location"> <span class="glyphicon glyphicon-map-marker"></span>{{items.location}}
+          <span class="seperator">|</span>
+           <span class="glyphicon glyphicon-link"></span> <a href="{{items.link?.url}}" target="_blank">{{items.link?.name}} </a></span>
       </div> </div>
     </div>
   </div>
