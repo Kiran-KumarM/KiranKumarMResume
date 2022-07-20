@@ -1,5 +1,5 @@
 import { Component,OnInit,AfterViewInit} from '@angular/core';
-import { SharedService,ResumeDetails } from './shared/shared.service'
+import { SharedService,ResumeDetails,AbilitiesSubDetails } from './shared/shared.service'
 declare let $: any;
 type InavItrms = Array<{id: number, divId: string ,name:string}>;
 
@@ -15,24 +15,28 @@ export class AppComponent implements OnInit {
   navArrays:InavItrms=[{id:0,divId:'profile',name:'PROFILE'},{id:1,divId:'experiences',name:'EXPERIENCES'},{id:2,divId:'abilities',name:'ABILITIES'},{id:3,divId:'contact',name:'CONTACT'}]
   intro:string='';
   toggelNav:boolean=false;
-  ageInyears!:number;
+  glpystar=[1,2,3,4,5]
  
   constructor(private appservice:SharedService){
-
+    this.resumeDetails=this.appservice.getResumeData();
+    this.resumeDetails.profile.details.age=this.calculateAge(this.resumeDetails.profile.details.age);
+    this.resumeDetails.abilities.skills=this.arrayChunks(this.resumeDetails.abilities.skills);
+    this.resumeDetails.abilities.languages=this.arrayChunks(this.resumeDetails.abilities.languages);
+    this.resumeDetails.abilities.tools=this.arrayChunks(this.resumeDetails.abilities.tools);
   }
   ngOnInit(): void {
-    this.resumeDetails=this.appservice.getResumeData();
-    this.resumeDetails.profile.details.age=this.calculateAge(this.resumeDetails.profile.details.age)
+
+
     console.log(this.resumeDetails)
-    this.applyIntoHeight();
+   // this.applyIntoHeight();
     const navigationHeight = document.querySelector<HTMLElement>('.header')!.offsetHeight;
     document.documentElement.style.setProperty('--scroll-padding', navigationHeight - 1 + "px");
    // window.scrollTo(0, 0);
     
   }
-  applyIntoHeight(){
-    document.querySelectorAll<HTMLElement>('.intro')[0].style.height=window.innerHeight +'px';
-  }
+  // applyIntoHeight(){
+  //   document.querySelectorAll<HTMLElement>('.intro')[0].style.height=window.innerHeight +'px';
+  // }
 
   ngAfterViewInit(){
     this.startTypingAnimation();
@@ -60,6 +64,12 @@ export class AppComponent implements OnInit {
       }
 
   });
+  }
+  arrayChunks(inputArray:any):AbilitiesSubDetails[][]{
+    let cheunkcdata=[];
+    cheunkcdata.push(inputArray.slice(0,Math.ceil(inputArray.length/2)))
+    cheunkcdata.push(inputArray.slice(Math.ceil(inputArray.length/2)))
+    return cheunkcdata;
   }
   calculateAge(myDOB:string) :string{
     var dob = new Date(myDOB);  

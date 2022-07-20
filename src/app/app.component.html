@@ -25,7 +25,7 @@
     <div class="d-flex profile_wrapper">
       <div><h3>About Me</h3>  <p>{{resumeDetails.profile.aboutMe}}</p></div>
       <div class="txt_align"><img src="https://picsum.photos/200" alt="Profile photo"></div>
-      <div><h3>Details</h3>  <p> <strong>Name:</strong><br>{{resumeDetails.profile.details.name}}<br><strong>Age:</strong> <br>{{resumeDetails.profile.details.age}} years <br><strong>Phone:</strong><br> +91-8667095979<br><strong>Location:</strong><br>{{resumeDetails.profile.details.address}} </p></div>
+      <div><h3>Details</h3>  <p> <strong>Name:</strong><br>{{resumeDetails.profile.details.name}}<br><strong>Age:</strong> <br>{{resumeDetails.profile.details.age}} years <br><strong>Location:</strong><br>{{resumeDetails.profile.details.address}} </p></div>
     </div>
   </div>
 </div>
@@ -60,70 +60,18 @@
 
 <div class="abilities">
   <div id="abilities" #abilities class="container" >
-    <h2 class="headings">Abilities</h2>
-    <div class="quote">"It is possible to fly without motors, but not without knowledge and skill." <br>- Wilbur Wright</div>
+    <h2 class="headings">{{resumeDetails.abilities.heading}}</h2>
+    <div class="quote">{{resumeDetails.abilities.quote}} <br>- {{resumeDetails.abilities.quoteSayer}}</div>
     <h3>Skills</h3>
     <div class="abilities_wrapper careers">
       <div class="row d-flex">
-        <div class="skill_list">
-          <div class="d-flex"> 
-          <div class="skill_name">Angular</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-       </div>
-       <div class="d-flex"> 
-        <div class="skill_name">Typescript</div> 
-        <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-        </div>
-       <div class="d-flex"> 
-        <div class="skill_name">HTML(5)</div> 
-        <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-        </div>
-        <div class="d-flex"> 
-          <div class="skill_name">CSS(3)</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-        </div>
-        <div class="d-flex"> 
-          <div class="skill_name">JSON</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-      </div>
-        <div class="d-flex"> 
-          <div class="skill_name">Javascript</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="d-flex"> 
-          <div class="skill_name">Command line Inteface</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
-       </div>
-      </div>
-        <div class="skill_list">
-          <div class="d-flex"> 
-            <div class="skill_name">JQuery</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-         </div>
-         <div class="d-flex"> 
-          <div class="skill_name">Bootstrap Framework</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-       </div>
-          <div class="d-flex"> 
-            <div class="skill_name">ASP.NET</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-        </div>
-        <div class="d-flex"> 
-          <div class="skill_name">Adobe Photoshop</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-          </div>
-         <div class="d-flex"> 
-          <div class="skill_name">RPA (AA)</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-          </div>
-          <div class="d-flex"> 
-            <div class="skill_name">Node.js</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-        </div>
-          <div class="d-flex"> 
-            <div class="skill_name">React</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-        </div>
+        <div class="skill_list" *ngFor="let data of resumeDetails?.abilities?.skills">
+          <div class="d-flex" *ngFor="let skills of data"> 
+              <div class="skill_name">{{skills.name}}</div> 
+              <div  class="skill_rating">
+                <span *ngFor="let value of glpystar" class="glyphicon glyphicon-star" [ngClass]=" (value <=skills.rating )? 'filled':''"></span>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -131,25 +79,13 @@
     <h3>Languages</h3>
     <div class="abilities_wrapper languages">
       <div class="row d-flex">
-        <div class="skill_list">
-          <div class="d-flex"> 
-            <div class="skill_name">Hindi (Mother tongue)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-          </div>
-         <div class="d-flex"> 
-          <div class="skill_name">English (Daily use)</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-       </div>
-       </div>
-        <div class="skill_list">
-          <div class="d-flex"> 
-            <div class="skill_name">Haryanvi (Daily use)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-         </div>
-         <div class="d-flex"> 
-          <div class="skill_name">Tamil</div> 
-          <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star "></span><span class="glyphicon glyphicon-star "></span><span class="glyphicon glyphicon-star "></span></div>
-       </div>
+        <div class="skill_list" *ngFor="let data of resumeDetails?.abilities?.languages">
+          <div class="d-flex" *ngFor="let skills of data"> 
+              <div class="skill_name">{{skills.name}}</div> 
+              <div  class="skill_rating">
+                <span *ngFor="let value of glpystar" class="glyphicon glyphicon-star" [ngClass]=" (value <=skills.rating )? 'filled':''"></span>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -157,35 +93,13 @@
     <h3>Tools</h3>
     <div class="abilities_wrapper tools">
       <div class="row d-flex">
-        <div class="skill_list">
-          <div class="d-flex"> 
-            <div class="skill_name">MS Office (10+ years)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-          </div>
-          <div class="d-flex"> 
-            <div class="skill_name">Windows (10+ years)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-          </div>
-          <div class="d-flex"> 
-            <div class="skill_name">Notepad++ (4 years)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-          </div>
-
-        </div>
-        <div class="skill_list">
-          <div class="d-flex"> 
-            <div class="skill_name">Google Chrome (6 years)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span></div>
-          </div>
-          <div class="d-flex"> 
-            <div class="skill_name">Visual Studio Code (4 years)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
-          </div>
-          <div class="d-flex"> 
-            <div class="skill_name">Micosoft Visual Studio (4 years)</div> 
-            <div  class="skill_rating"><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star filled"></span><span class="glyphicon glyphicon-star"></span></div>
-          </div>
-
+        <div class="skill_list" *ngFor="let data of resumeDetails?.abilities?.tools">
+          <div class="d-flex" *ngFor="let skills of data"> 
+              <div class="skill_name">{{skills.name}}</div> 
+              <div  class="skill_rating">
+                <span *ngFor="let value of glpystar" class="glyphicon glyphicon-star" [ngClass]=" (value <=skills.rating )? 'filled':''"></span>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -195,12 +109,19 @@
 
 <div class="contact">
   <div id="contact" #contact class="container" >
-    <h2 class="headings">Contact</h2>
-    <div class="quote">"The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed." <br>- Carl Jung</div>
+    <h2 class="headings">{{resumeDetails.contact.heading}}</h2>
+    <div class="quote">{{resumeDetails.contact.quote}} <br>- {{resumeDetails.contact.quoteSayer}}</div>
     <div class="contact_wrapper">
-      <div class="row d-flex">
-        <div class="list"> fdsf</div>
-        <div class="list"> dfds</div>
+      <div class="contact_row d-flex">
+        <div class="list_footer d-flex"> 
+          <a class="list_wrapper" href="http://linkedin.com/in/kiran-kumarm" target="_blank"><span class="icon linkedin_icon"></span>http://linkedin.com/in/kiran-kumarm</a>
+          <a class="list_wrapper" href="https://github.com/Kiran-KumarM" target="_blank"><span class="icon github_icon"></span>https://github.com/Kiran-KumarM</a>
+
+        </div>
+        <div class="list_footer  d-flex"> 
+          <a class="list_wrapper" href="mailto:kiran.kumar.msingh@gmail.com" target="_blank"><span class="icon mail_icon"></span>kiran.kumar.msingh@gmail.com</a>
+          <a class="list_wrapper" href="tel:8667095979" target="_blank"><span class="icon call_icon"></span>+91-8667095979</a>
+        </div>
       </div>
     </div>
   </div>

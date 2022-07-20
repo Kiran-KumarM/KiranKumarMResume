@@ -4,12 +4,8 @@ import { Injectable } from '@angular/core';
 export interface ResumeDetails {
   profile :ProfileDetails;
   experiences:ExperiencesDetails;
-  // name: string;
-  // GSTTIN: string;
-  // AddressLine1: string;
-  // AddressLine2: string;
-  // PIN: string;
-  // state: string;
+  abilities:AbilitiesDetails;
+  contact:ContactDetails;
 }
 export interface ProfileDetails {
   heading:string;
@@ -28,23 +24,41 @@ export interface ExperiencesDetails {
   quoteSayer:string;
   education:EducationDetails[];
   carrers:CarrerDetails[];
+
 }
-export interface EducationDetails {
-  instituteName:string;
-  duration:string;
-  courseName:string;
-  courseResult:string;
-  description:string;
-  location:string;
-  link?:string;
+  export interface EducationDetails {
+    instituteName:string;
+    duration:string;
+    courseName:string;
+    courseResult:string;
+    description:string;
+    location:string;
+    link?:string;
+  }
+  export interface CarrerDetails {
+    companyName:string;
+    duration:string;
+    position:string;
+    description:string;
+    location:string;
+    link?:{name:string;url:string;};
+  }
+export interface AbilitiesDetails {
+  heading:string;
+  quote:string;
+  quoteSayer:string;
+  skills:AbilitiesSubDetails[] | any;
+  languages:AbilitiesSubDetails[] |any;
+  tools:AbilitiesSubDetails[] |any;
 }
-export interface CarrerDetails {
-  companyName:string;
-  duration:string;
-  position:string;
-  description:string;
-  location:string;
-  link?:{name:string;url:string;};
+  export interface AbilitiesSubDetails {
+  name:string;
+  rating:number;
+  }
+export interface ContactDetails {
+  heading:string;
+  quote:string;
+  quoteSayer:string;
 }
 
 @Injectable({
@@ -65,7 +79,7 @@ export class SharedService {
         address:'No.17C, Seethapathy 1st Street, Madhavaram, Chennai-600060,India.'
       }
     };
-    let experiencesData={
+    let experiencesData:ExperiencesDetails={
       heading:'Experiences',
       quote:'"The only source of knowledge is experience.”',
       quoteSayer:'Albert Einstein',
@@ -104,13 +118,54 @@ export class SharedService {
       }]
       
     };
+    let abilitiesData:AbilitiesDetails={
+      heading:'Abilities',
+      quote:'"It is possible to fly without motors, but not without knowledge and skill."',
+      quoteSayer:'Wilbur Wright',
+      skills:[
+        {name:'Angular',rating:5},
+        {name:'Typescript',rating:5},
+        {name:'HTML(5)',rating:5},
+        {name:'CSS(3)',rating:5},
+        {name:'JSON',rating:5},
+        {name:'Javascript',rating:4},
+        {name:'Command line Inteface',rating:4},
+        {name:'JQuery',rating:3},
+        {name:'Bootstrap Framework',rating:3},
+        {name:'ASP.NET',rating:2},
+        {name:'Adobe Photoshop',rating:2},
+        {name:'RPA (AA)',rating:2},
+        {name:'Node.js',rating:1},
+        {name:'React',rating:1},
+      ],
+      languages:[
+        {name:'Hindi (Mother tongue)',rating:5},
+        {name:'English (Daily use)',rating:5},
+        {name:'Haryanvi (Daily use)',rating:5},
+        {name:'Tamil',rating:2},
+      ],
+      tools:[
+        {name:'MS Office (10+ years',rating:5},
+        {name:'Windows (10+ years)',rating:5},
+        {name:'Notepad++ (4 years)',rating:5},
+        {name:'Google Chrome (6 years',rating:5},
+        {name:'Visual Studio Code (4 years)',rating:4},
+        {name:'Micosoft Visual Studio (4 years)',rating:4},
+      ]
 
-
+    }
+    let contactData:ContactDetails={
+      heading:'Contact',
+      quote:'"The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed."',
+      quoteSayer:'Carl Jung',
+    }
 
 
     let resumeData: ResumeDetails ={
       profile:profileData,
-      experiences:experiencesData
+      experiences:experiencesData,
+      abilities:abilitiesData,
+      contact:contactData
     }
     return resumeData;
   }
