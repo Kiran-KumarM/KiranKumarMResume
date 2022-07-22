@@ -341,4 +341,16 @@ font-size: 28px;
     .list_wrapper{
         justify-content: center;
     }
+    .short_intro{
+        font-size: 30px;
+    }
+    .container{
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 768px){
+.container {
+    max-width: 750px;
+}
 }
