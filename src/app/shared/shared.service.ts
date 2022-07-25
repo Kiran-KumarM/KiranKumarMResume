@@ -133,7 +133,6 @@ export class SharedService {
         {name:'JQuery',rating:3},
         {name:'Bootstrap Framework',rating:3},
         {name:'ASP.NET',rating:2},
-        {name:'Adobe Photoshop',rating:2},
         {name:'RPA (AA)',rating:2},
         {name:'Node.js',rating:1},
         {name:'React',rating:1},
@@ -148,9 +147,12 @@ export class SharedService {
         {name:'MS Office (10+ years',rating:5},
         {name:'Windows (10+ years)',rating:5},
         {name:'Notepad++ (4 years)',rating:5},
-        {name:'Google Chrome (6 years',rating:5},
-        {name:'Visual Studio Code (4 years)',rating:4},
+        {name:'Google Chrome (6 years)',rating:5},
+        {name:'Team Foundation Server(TFS)',rating:5},
+        {name:'Visual Studio Code (4 years)',rating:4}, 
+        {name:'Git/ Git Flow',rating:4},
         {name:'Micosoft Visual Studio (4 years)',rating:4},
+        {name:'Adobe Photoshop',rating:3},
       ]
 
     }
