@@ -346,11 +346,13 @@ font-size: 28px;
     }
     .container{
         max-width: 970px;
+        padding: 40px 60px;
     }
 }
 
 @media (max-width: 768px){
 .container {
     max-width: 750px;
+    padding: 40px 30px;
 }
 }
