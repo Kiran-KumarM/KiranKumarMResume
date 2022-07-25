@@ -312,22 +312,6 @@ font-size: 28px;
 .list_wrapper:hover{
     color:var(--color-white);
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 992px){
     .profile_wrapper, .experiences_wrapper .row , .abilities_wrapper .row,.contact_row{
         flex-direction: column;
@@ -353,6 +337,6 @@ font-size: 28px;
 @media (max-width: 768px){
 .container {
     max-width: 750px;
-    padding: 40px 30px;
+    padding: 40px 25px;
 }
 }
