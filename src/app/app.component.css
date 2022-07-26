@@ -122,6 +122,19 @@
     padding-top: 85px;
     height:400px;
     height: calc(1vh*100);
+    background: no-repeat center right fixed url(../assets/images/bg1.jpg);
+    background-size: 100%;
+}
+.intro .overlay{
+    background-color:var(--background-color);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    z-index: 2;
 }
 .container_main {
     max-width: 1280px;
@@ -140,11 +153,13 @@
     padding: 5px 25px;
     flex: 1;
     white-space: pre-wrap;
+    z-index: 4;
 }
 .short_intro{
     font-size: 55px;
     font-weight: 700;
     border-right: 1px solid var(--color-white);
+    z-index: 4;
 }
 .typewriter_cursor{
     animation: Typewriter-cursor 1s infinite;
@@ -338,5 +353,17 @@ font-size: 28px;
 .container {
     max-width: 750px;
     padding: 40px 25px;
+}
+}
+@media only screen and (orientation: landscape) and (max-width: 767px){
+.intro {
+    background-size: 150% auto;
+    background-attachment: scroll;
+}
+}
+@media only screen and (orientation: portrait) and (max-width: 767px){
+.intro {
+    background-size: auto 150%;
+    background-attachment: scroll;
 }
 }
