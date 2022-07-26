@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
     return (day_diff/365).toFixed(1);
   }
   startTypingAnimation(){
-    let message='Hi, I am Kiran,\na Web Developer';
+    let message='Hello, I am Kiran Kumar,\na Web Developer';
     let i=0;
    let typingAnimation= setInterval(()=>{
       this.intro+=message[i];

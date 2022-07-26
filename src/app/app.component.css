@@ -210,6 +210,7 @@ font-size: 28px;
     border: 12px solid #f8f9ff;
     width: 100%;
     max-width: 250px;
+    filter: grayscale(0.1);
     height: auto;
 }
 .profile_wrapper >div{
