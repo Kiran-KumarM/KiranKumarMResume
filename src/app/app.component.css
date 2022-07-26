@@ -128,7 +128,7 @@
 .intro .overlay{
     background-color:var(--background-color);
     position: absolute;
-    top: 0px;
+    top: 85px;
     bottom: 0px;
     left: 0px;
     right: 0px;
