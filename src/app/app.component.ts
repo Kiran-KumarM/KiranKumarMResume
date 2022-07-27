@@ -64,6 +64,13 @@ export class AppComponent implements OnInit {
 
   });
   }
+  ngAfterViewChecked(){
+    setTimeout(() => {
+      let element=document.querySelector('.short_intro')
+      element!.classList.add("animation");
+    }, 800);
+
+  }
   arrayChunks(inputArray:any):AbilitiesSubDetails[][]{
     let cheunkcdata=[];
     cheunkcdata.push(inputArray.slice(0,Math.ceil(inputArray.length/2)))

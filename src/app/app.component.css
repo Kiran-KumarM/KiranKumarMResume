@@ -163,13 +163,16 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    
+    opacity:0;
+}
+.short_intro.animation{
+    opacity: 1;
 }
 .short_intro div{
     display: flex;
     justify-content: center;
 }
-.short_intro .first div:first-child{
+.short_intro.animation .first div:first-child{
     animation: left_to_right 1.3s ease-in-out 1;
 }
 @keyframes left_to_right {
@@ -180,7 +183,7 @@
        transform: translateX(0px);
     }
 }
-.short_intro .first div:last-child{
+.short_intro.animation .first div:last-child{
     animation: right_to_left 1.3s ease-in-out 1;
 }
 @keyframes right_to_left {
@@ -191,7 +194,7 @@
        transform: translateX(0px);
     }
 }
-.short_intro .second {
+.short_intro.animation .second {
     animation: bottom_to_top 1.9s  ease-in-out 1;
 }
 @keyframes bottom_to_top {
