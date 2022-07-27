@@ -39,7 +39,6 @@ export class AppComponent implements OnInit {
   // }
 
   ngAfterViewInit(){
-    this.startTypingAnimation();
     let sectionOffsetTop:number[]=[];
     let buffer=window.innerHeight/2;
     for(let i=0;i<this.navArrays.length;i++){
@@ -81,6 +80,7 @@ export class AppComponent implements OnInit {
   }
   startTypingAnimation(){
     let message='Hello, I am Kiran Kumar,\na Web Developer';
+    this.intro=message;
     let i=0;
    let typingAnimation= setInterval(()=>{
       this.intro+=message[i];
