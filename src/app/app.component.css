@@ -394,6 +394,9 @@ font-size: 28px;
         max-width: 970px;
         padding: 40px 60px;
     }
+    .lander{
+        height: calc(100vh - 140px);
+    }
 }
 
 @media (max-width: 768px){
