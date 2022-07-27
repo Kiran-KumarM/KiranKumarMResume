@@ -122,8 +122,8 @@
     padding-top: 85px;
     height:400px;
     height: calc(1vh*100);
-    background: no-repeat center right fixed url(../assets/images/bg1.jpg);
-    background-size: 100%;
+    /* background: no-repeat center right fixed url(../assets/images/bg1.jpg);
+    background-size: 100%; */
     overflow: hidden;
 }
 .intro .overlay{
@@ -178,10 +178,10 @@
 }
 @keyframes left_to_right {
     0% {
-      transform: translateX(-400px);
+      transform: translateX(-100%);
     }
     100% {
-       transform: translateX(0px);
+       transform: translateX(0%);
     }
 }
 .short_intro.animation .first div:last-child{
@@ -189,10 +189,10 @@
 }
 @keyframes right_to_left {
     0% {
-      transform: translateX(400px);
+      transform: translateX(100%);
     }
     100% {
-       transform: translateX(0px);
+       transform: translateX(0%);
     }
 }
 .short_intro.animation .second {
@@ -401,7 +401,7 @@ font-size: 28px;
     padding: 40px 25px;
 }
 }
-@media only screen and (orientation: landscape) and (max-width: 767px){
+/* @media only screen and (orientation: landscape) and (max-width: 767px){
 .intro {
     background-size: 150% auto;
     background-attachment: scroll;
@@ -412,4 +412,4 @@ font-size: 28px;
     background-size: auto 150%;
     background-attachment: scroll;
 }
-}
+} */
