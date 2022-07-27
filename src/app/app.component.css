@@ -124,6 +124,7 @@
     height: calc(1vh*100);
     background: no-repeat center right fixed url(../assets/images/bg1.jpg);
     background-size: 100%;
+    overflow: hidden;
 }
 .intro .overlay{
     background-color:var(--background-color);
@@ -144,7 +145,7 @@
 .lander{
     display: flex;
     justify-content: space-evenly;
-    min-height: inherit;
+    /* min-height: inherit; */
     height: 100%;
 }
 .short_intro,.sub_topic{
