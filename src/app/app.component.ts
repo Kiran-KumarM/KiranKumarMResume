@@ -90,7 +90,6 @@ export class AppComponent implements OnInit {
     }
     let hasClassOnAllExperience=(Array.from(experienceswrapperElement)).filter(x=>x.className.includes('animate'))
     for(let i=0;i<experienceswrapperElement.length && hasClassOnAllExperience.length<4 ;i++){
-      console.log('sss')
       let experienceswrapperTop=experienceswrapperElement[i].getBoundingClientRect().top;
       if(!(experienceswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >experienceswrapperTop ){
         experienceswrapperElement[i]!.classList.add("animate"); 
