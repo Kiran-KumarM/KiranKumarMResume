@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
     let buffer=window.innerHeight/2;
     const profileElement=  document.querySelectorAll('.c_headings') as NodeListOf<HTMLElement>;
     const profilewrapper= (<HTMLElement>document.querySelector('.profile_wrapper'));
+   
     this.animateDiv(profileElement,profilewrapper)
     for(let i=0;i<this.navArrays.length;i++){
       sectionOffsetTop.push(document.getElementById(this.navArrays[i].divId)!.offsetTop);
@@ -74,14 +75,13 @@ export class AppComponent implements OnInit {
 
   }
   animateDiv(profileElement:NodeListOf<HTMLElement>,profilewrapper:HTMLElement){
-    console.log((Array.from(profileElement)).filter(x=>x.className.includes('animation')))
-    for(let i=0;i<profileElement.length;i++){
+    let hasClassOnAll=(Array.from(profileElement)).filter(x=>x.className.includes('animation'))
+    for(let i=0;i<profileElement.length && hasClassOnAll.length<4 ;i++){
       let profiletop=profileElement[i].getBoundingClientRect().top;
       if(!(profileElement[i]!.className.includes('animation')) &&  (window.innerHeight/1.6) >profiletop ){
         profileElement[i]!.classList.add("animation"); 
       }
     }
-
     let profilewrappertop=profilewrapper.getBoundingClientRect().top;
 
     if(!(profilewrapper!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
