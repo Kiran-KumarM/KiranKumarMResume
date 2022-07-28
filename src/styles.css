@@ -23,7 +23,7 @@ body{
     line-height: 1.64;
 }
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     scroll-padding-top: var(--scroll-padding, 50px);
   }
 html,body{  

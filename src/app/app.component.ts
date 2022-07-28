@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   glpystar=[1,2,3,4,5]
  
   constructor(private appservice:SharedService){
+
     this.resumeDetails=this.appservice.getResumeData();
     this.resumeDetails.profile.details.age=this.calculateAge(this.resumeDetails.profile.details.age);
     this.resumeDetails.abilities.skills=this.arrayChunks(this.resumeDetails.abilities.skills);
@@ -25,13 +26,10 @@ export class AppComponent implements OnInit {
     this.resumeDetails.abilities.tools=this.arrayChunks(this.resumeDetails.abilities.tools);
   }
   ngOnInit(): void {
-
-
-    console.log(this.resumeDetails)
    // this.applyIntoHeight();
     const navigationHeight = document.querySelector<HTMLElement>('.header')!.offsetHeight;
     document.documentElement.style.setProperty('--scroll-padding', navigationHeight - 1 + "px");
-   // window.scrollTo(0, 0);
+
     
   }
   // applyIntoHeight(){
@@ -41,12 +39,16 @@ export class AppComponent implements OnInit {
   ngAfterViewInit(){
     let sectionOffsetTop:number[]=[];
     let buffer=window.innerHeight/2;
+    const profileElement= <HTMLElement>document.querySelector('#profile');
+    const profilewrapper= (<HTMLElement>document.querySelector('.profile_wrapper'));
+    this.animateDiv(profileElement,profilewrapper)
     for(let i=0;i<this.navArrays.length;i++){
       sectionOffsetTop.push(document.getElementById(this.navArrays[i].divId)!.offsetTop);
     }
     window.addEventListener('scroll',(event) => {
       let windowScrolloffset=window.pageYOffset;
       let windowScrolloffsetWithHeader=windowScrolloffset+85;
+      this.animateDiv(profileElement,profilewrapper)
       if(windowScrolloffset !=0){
         document.querySelector('.header')!.classList.add("scrollchange");
       }
@@ -70,6 +72,17 @@ export class AppComponent implements OnInit {
       element!.classList.add("animation");
     }, 800);
 
+  }
+  animateDiv(profileElement:HTMLElement,profilewrapper:HTMLElement){
+    let profiletop=profileElement.getBoundingClientRect().top;
+    let profilewrappertop=profilewrapper.getBoundingClientRect().top;
+    if(!(profileElement!.className.includes('animation')) &&  (window.innerHeight/1.6) >profiletop ){
+      profileElement!.classList.add("animation"); 
+    }
+    else if(!(profilewrapper!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
+      profilewrapper!.classList.add("animate"); 
+    }
+    console.log(profiletop,profilewrappertop)
   }
   arrayChunks(inputArray:any):AbilitiesSubDetails[][]{
     let cheunkcdata=[];
