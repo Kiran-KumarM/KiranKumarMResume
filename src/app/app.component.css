@@ -268,7 +268,7 @@ font-size: 28px;
     padding-left: 15px;
     opacity:0;
 }
-.headings,.quote{
+.headings,.quote,.experiences_wrapper .row .heading,.experiences_wrapper .row .details{
     opacity: 0;
 }
 .c_headings.animation .headings,.c_headings.animation .quote{
@@ -284,7 +284,7 @@ font-size: 28px;
         opacity: 1;
     }
 }
-#profile.animation .profile_wrapper.animate div:nth-child(1){
+#profile.animation .profile_wrapper.animate div:nth-child(1),.experiences_wrapper .row.animate .heading{
     animation: left_to_right 1s ease-in-out 1 forwards;
     opacity: 1;
 }
@@ -302,7 +302,7 @@ font-size: 28px;
         opacity:1;
     }
 }
-#profile.animation .profile_wrapper.animate div:nth-child(3){
+#profile.animation .profile_wrapper.animate div:nth-child(3),.experiences_wrapper .row.animate .details{
     animation: right_to_left 1s ease-in-out  1;
     opacity:1;
 }

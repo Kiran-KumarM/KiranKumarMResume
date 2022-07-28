@@ -40,16 +40,17 @@ export class AppComponent implements OnInit {
     let sectionOffsetTop:number[]=[];
     let buffer=window.innerHeight/2;
     const profileElement=  document.querySelectorAll('.c_headings') as NodeListOf<HTMLElement>;
-    const profilewrapper= (<HTMLElement>document.querySelector('.profile_wrapper'));
+    const profilewrapperElement= (<HTMLElement>document.querySelector('.profile_wrapper'));
+    const experienceswrapperElement=  document.querySelectorAll('.experiences_wrapper .row') as NodeListOf<HTMLElement>;
    
-    this.animateDiv(profileElement,profilewrapper)
+    this.animateDiv(profileElement,profilewrapperElement,experienceswrapperElement)
     for(let i=0;i<this.navArrays.length;i++){
       sectionOffsetTop.push(document.getElementById(this.navArrays[i].divId)!.offsetTop);
     }
     window.addEventListener('scroll',(event) => {
       let windowScrolloffset=window.pageYOffset;
       let windowScrolloffsetWithHeader=windowScrolloffset+85;
-      this.animateDiv(profileElement,profilewrapper)
+      this.animateDiv(profileElement,profilewrapperElement,experienceswrapperElement)
       if(windowScrolloffset !=0){
         document.querySelector('.header')!.classList.add("scrollchange");
       }
@@ -74,7 +75,7 @@ export class AppComponent implements OnInit {
     }, 800);
 
   }
-  animateDiv(profileElement:NodeListOf<HTMLElement>,profilewrapper:HTMLElement){
+  animateDiv(profileElement:NodeListOf<HTMLElement>,profilewrapperElement:HTMLElement,experienceswrapperElement:NodeListOf<HTMLElement>){
     let hasClassOnAll=(Array.from(profileElement)).filter(x=>x.className.includes('animation'))
     for(let i=0;i<profileElement.length && hasClassOnAll.length<4 ;i++){
       let profiletop=profileElement[i].getBoundingClientRect().top;
@@ -82,11 +83,20 @@ export class AppComponent implements OnInit {
         profileElement[i]!.classList.add("animation"); 
       }
     }
-    let profilewrappertop=profilewrapper.getBoundingClientRect().top;
+    let profilewrappertop=profilewrapperElement.getBoundingClientRect().top;
 
-    if(!(profilewrapper!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
-      profilewrapper!.classList.add("animate"); 
+    if(!(profilewrapperElement!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
+      profilewrapperElement!.classList.add("animate"); 
     }
+    let hasClassOnAllExperience=(Array.from(experienceswrapperElement)).filter(x=>x.className.includes('animate'))
+    for(let i=0;i<experienceswrapperElement.length && hasClassOnAllExperience.length<4 ;i++){
+      console.log('sss')
+      let experienceswrapperTop=experienceswrapperElement[i].getBoundingClientRect().top;
+      if(!(experienceswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >experienceswrapperTop ){
+        experienceswrapperElement[i]!.classList.add("animate"); 
+      }
+    }
+
    // console.log(profiletop,profilewrappertop)
   }
   arrayChunks(inputArray:any):AbilitiesSubDetails[][]{
