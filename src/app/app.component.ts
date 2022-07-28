@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
   ngAfterViewInit(){
     let sectionOffsetTop:number[]=[];
     let buffer=window.innerHeight/2;
-    const profileElement= <HTMLElement>document.querySelector('#profile');
+    const profileElement=  document.querySelectorAll('.c_headings') as NodeListOf<HTMLElement>;
     const profilewrapper= (<HTMLElement>document.querySelector('.profile_wrapper'));
     this.animateDiv(profileElement,profilewrapper)
     for(let i=0;i<this.navArrays.length;i++){
@@ -73,16 +73,21 @@ export class AppComponent implements OnInit {
     }, 800);
 
   }
-  animateDiv(profileElement:HTMLElement,profilewrapper:HTMLElement){
-    let profiletop=profileElement.getBoundingClientRect().top;
-    let profilewrappertop=profilewrapper.getBoundingClientRect().top;
-    if(!(profileElement!.className.includes('animation')) &&  (window.innerHeight/1.6) >profiletop ){
-      profileElement!.classList.add("animation"); 
+  animateDiv(profileElement:NodeListOf<HTMLElement>,profilewrapper:HTMLElement){
+    console.log((Array.from(profileElement)).filter(x=>x.className.includes('animation')))
+    for(let i=0;i<profileElement.length;i++){
+      let profiletop=profileElement[i].getBoundingClientRect().top;
+      if(!(profileElement[i]!.className.includes('animation')) &&  (window.innerHeight/1.6) >profiletop ){
+        profileElement[i]!.classList.add("animation"); 
+      }
     }
-    else if(!(profilewrapper!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
+
+    let profilewrappertop=profilewrapper.getBoundingClientRect().top;
+
+    if(!(profilewrapper!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
       profilewrapper!.classList.add("animate"); 
     }
-    console.log(profiletop,profilewrappertop)
+   // console.log(profiletop,profilewrappertop)
   }
   arrayChunks(inputArray:any):AbilitiesSubDetails[][]{
     let cheunkcdata=[];

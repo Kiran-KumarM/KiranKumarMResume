@@ -271,7 +271,7 @@ font-size: 28px;
 .headings,.quote{
     opacity: 0;
 }
-#profile.animation .headings,#profile.animation .quote{
+.c_headings.animation .headings,.c_headings.animation .quote{
     animation: scale_visible .6s ease-in-out 1 forwards;
 }
 @keyframes scale_visible {
