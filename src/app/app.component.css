@@ -268,7 +268,7 @@ font-size: 28px;
     padding-left: 15px;
     opacity:0;
 }
-.headings,.quote,.experiences_wrapper .row .heading,.experiences_wrapper .row .details{
+.headings,.quote,.experiences_wrapper .row .heading,.experiences_wrapper .row .details,.abilities_wrapper .row .skill_list{
     opacity: 0;
 }
 .c_headings.animation .headings,.c_headings.animation .quote{
@@ -284,7 +284,7 @@ font-size: 28px;
         opacity: 1;
     }
 }
-#profile.animation .profile_wrapper.animate div:nth-child(1),.experiences_wrapper .row.animate .heading{
+#profile.animation .profile_wrapper.animate div:nth-child(1),.experiences_wrapper .row.animate .heading ,.abilities_wrapper .row.animate .skill_list:nth-child(1){
     animation: left_to_right 1s ease-in-out 1 forwards;
     opacity: 1;
 }
@@ -302,7 +302,7 @@ font-size: 28px;
         opacity:1;
     }
 }
-#profile.animation .profile_wrapper.animate div:nth-child(3),.experiences_wrapper .row.animate .details{
+#profile.animation .profile_wrapper.animate div:nth-child(3),.experiences_wrapper .row.animate .details,.abilities_wrapper .row.animate .skill_list:nth-child(2){
     animation: right_to_left 1s ease-in-out  1;
     opacity:1;
 }
@@ -438,6 +438,10 @@ font-size: 28px;
     }
     .lander{
         height: calc(100vh - 140px);
+    }
+    .abilities_wrapper .row.animate .skill_list{
+        animation: left_to_right 1s ease-in-out 1 forwards !important;
+        opacity: 1;
     }
 }
 

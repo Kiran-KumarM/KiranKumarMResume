@@ -42,15 +42,16 @@ export class AppComponent implements OnInit {
     const profileElement=  document.querySelectorAll('.c_headings') as NodeListOf<HTMLElement>;
     const profilewrapperElement= (<HTMLElement>document.querySelector('.profile_wrapper'));
     const experienceswrapperElement=  document.querySelectorAll('.experiences_wrapper .row') as NodeListOf<HTMLElement>;
-   
-    this.animateDiv(profileElement,profilewrapperElement,experienceswrapperElement)
+    const abilitieswrapperElement =document.querySelectorAll('.abilities_wrapper .row') as NodeListOf<HTMLElement>;
+
+    this.animateDiv(profileElement,profilewrapperElement,experienceswrapperElement,abilitieswrapperElement)
     for(let i=0;i<this.navArrays.length;i++){
       sectionOffsetTop.push(document.getElementById(this.navArrays[i].divId)!.offsetTop);
     }
     window.addEventListener('scroll',(event) => {
       let windowScrolloffset=window.pageYOffset;
       let windowScrolloffsetWithHeader=windowScrolloffset+85;
-      this.animateDiv(profileElement,profilewrapperElement,experienceswrapperElement)
+      this.animateDiv(profileElement,profilewrapperElement,experienceswrapperElement,abilitieswrapperElement)
       if(windowScrolloffset !=0){
         document.querySelector('.header')!.classList.add("scrollchange");
       }
@@ -75,7 +76,7 @@ export class AppComponent implements OnInit {
     }, 800);
 
   }
-  animateDiv(profileElement:NodeListOf<HTMLElement>,profilewrapperElement:HTMLElement,experienceswrapperElement:NodeListOf<HTMLElement>){
+  animateDiv(profileElement:NodeListOf<HTMLElement>,profilewrapperElement:HTMLElement,experienceswrapperElement:NodeListOf<HTMLElement>,abilitieswrapperElement:NodeListOf<HTMLElement>){
     let hasClassOnAll=(Array.from(profileElement)).filter(x=>x.className.includes('animation'))
     for(let i=0;i<profileElement.length && hasClassOnAll.length<4 ;i++){
       let profiletop=profileElement[i].getBoundingClientRect().top;
@@ -93,6 +94,13 @@ export class AppComponent implements OnInit {
       let experienceswrapperTop=experienceswrapperElement[i].getBoundingClientRect().top;
       if(!(experienceswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >experienceswrapperTop ){
         experienceswrapperElement[i]!.classList.add("animate"); 
+      }
+    }
+    let hasClassOnAllAbilities=(Array.from(abilitieswrapperElement)).filter(x=>x.className.includes('animate'))
+    for(let i=0;i<abilitieswrapperElement.length && hasClassOnAllAbilities.length<3 ;i++){
+      let abilitieswrapperTop=abilitieswrapperElement[i].getBoundingClientRect().top;
+      if(!(abilitieswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >abilitieswrapperTop ){
+        abilitieswrapperElement[i]!.classList.add("animate"); 
       }
     }
 
