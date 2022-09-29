@@ -89,20 +89,20 @@ export class AppComponent implements OnInit {
     if(!(profilewrapperElement!.className.includes('animate')) &&  (window.innerHeight/1.8) >profilewrappertop ){
       profilewrapperElement!.classList.add("animate"); 
     }
-    let hasClassOnAllExperience=(Array.from(experienceswrapperElement)).filter(x=>x.className.includes('animate'))
-    for(let i=0;i<experienceswrapperElement.length && hasClassOnAllExperience.length<4 ;i++){
-      let experienceswrapperTop=experienceswrapperElement[i].getBoundingClientRect().top;
-      if(!(experienceswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >experienceswrapperTop ){
-        experienceswrapperElement[i]!.classList.add("animate"); 
-      }
-    }
-    let hasClassOnAllAbilities=(Array.from(abilitieswrapperElement)).filter(x=>x.className.includes('animate'))
-    for(let i=0;i<abilitieswrapperElement.length && hasClassOnAllAbilities.length<3 ;i++){
-      let abilitieswrapperTop=abilitieswrapperElement[i].getBoundingClientRect().top;
-      if(!(abilitieswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >abilitieswrapperTop ){
-        abilitieswrapperElement[i]!.classList.add("animate"); 
-      }
-    }
+    // let hasClassOnAllExperience=(Array.from(experienceswrapperElement)).filter(x=>x.className.includes('animate'))
+    // for(let i=0;i<experienceswrapperElement.length && hasClassOnAllExperience.length<4 ;i++){
+    //   let experienceswrapperTop=experienceswrapperElement[i].getBoundingClientRect().top;
+    //   if(!(experienceswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >experienceswrapperTop ){
+    //     experienceswrapperElement[i]!.classList.add("animate"); 
+    //   }
+    // }
+    // let hasClassOnAllAbilities=(Array.from(abilitieswrapperElement)).filter(x=>x.className.includes('animate'))
+    // for(let i=0;i<abilitieswrapperElement.length && hasClassOnAllAbilities.length<3 ;i++){
+    //   let abilitieswrapperTop=abilitieswrapperElement[i].getBoundingClientRect().top;
+    //   if(!(abilitieswrapperElement[i]!.className.includes('animate')) &&  (window.innerHeight/1.3) >abilitieswrapperTop ){
+    //     abilitieswrapperElement[i]!.classList.add("animate"); 
+    //   }
+    // }
 
    // console.log(profiletop,profilewrappertop)
   }
