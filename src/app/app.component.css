@@ -268,7 +268,7 @@ font-size: 28px;
     padding-left: 15px;
     opacity:0;
 }
-.headings,.quote,.experiences_wrapper .row .heading{
+.headings,.quote{
     opacity: 0;
 }
 .c_headings.animation .headings,.c_headings.animation .quote{
